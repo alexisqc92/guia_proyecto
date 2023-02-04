@@ -1,0 +1,15 @@
+.spacer {
+  justify-content: space-between;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+  text-decoration: none;
+}
+
+a:active, a:hover {
+  color: accent;
+  background-color: rgb(149, 159, 184);
+  padding: 15px 25px;
+}
