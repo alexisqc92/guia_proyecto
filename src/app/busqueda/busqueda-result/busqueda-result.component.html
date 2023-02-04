@@ -3,8 +3,10 @@
     <h1 style="color: aliceblue;">Criteria no seleccionada</h1>
   </div>
 </div>
-
-<div *ngIf="criteriaListenedFromExternalComponent.criteria!=''" >
+<div class="wrapper" *ngIf="loading">
+  <div  class="lds-dual-ring"></div>
+</div>
+<div *ngIf="criteriaListenedFromExternalComponent.criteria!='' && !loading"  >
   <div class="wrapper">
     <div class="titulo">
       <h1 style="color: aliceblue;">{{criteriaListenedFromExternalComponent.criteria}}</h1>

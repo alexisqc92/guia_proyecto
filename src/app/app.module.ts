@@ -21,6 +21,8 @@ import {MatGridListModule} from '@angular/material/grid-list'; // Para grillas
 import {MatCardModule } from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+
+// Para http request
 import { HttpClientModule } from '@angular/common/http';
 
 

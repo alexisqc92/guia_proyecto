@@ -13,8 +13,10 @@ interface BusRes {
 })
 export class BusquedaComponent implements OnDestroy{
   criteria: string ='';
+  loading: boolean = false;
   criteriaSelected: BusRes = {perros: [],criteria: ''};
   private subResponse: Subscription;
+  private loadingResponse: Subscription = Subscription.EMPTY;
   constructor(public busquedaService: BusquedaService){
     this.subResponse = Subscription.EMPTY;
   }
@@ -45,8 +47,11 @@ export class BusquedaComponent implements OnDestroy{
       default:
         break;
     }
+    this.loadingResponse = this.busquedaService.getLoading().subscribe(r=>{
+      // console.log(r)
+      this.loading=r;
+    })
     this.subResponse = this.busquedaService.getBusquedaObservable().subscribe((r: Busqueda[])=>{
-      console.log('buscando');
       this.criteriaSelected = {perros: r, criteria: this.criteria};
     })
   }
@@ -54,5 +59,6 @@ export class BusquedaComponent implements OnDestroy{
   ngOnDestroy(): void {
     console.log('Dejando Componente')
     this.subResponse.unsubscribe();
+    this.loadingResponse.unsubscribe();
   }
 }

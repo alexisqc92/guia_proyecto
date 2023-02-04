@@ -12,4 +12,5 @@ interface BusRes {
 })
 export class BusquedaResultComponent {
   @Input() criteriaListenedFromExternalComponent: BusRes = {perros: [],criteria: ''};
+  @Input() loading: boolean = false;
 }

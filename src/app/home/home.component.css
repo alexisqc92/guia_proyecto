@@ -5,7 +5,7 @@ img {
 mat-grid-list {
   margin-top: 5rem;
   margin-bottom: 2rem;
-  padding:10rem  /*Para dar espacio dentro de casilla imagen*/
+  padding:10rem  /*Para dar espacio dentro de grilla*/
 }
 
 .texto {
